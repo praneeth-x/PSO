@@ -96,7 +96,7 @@ def avg_error(t,ce,w):
     return ae
 print("the average error of the fitting performance is\n")
 
-print(avg_error(time,ce,g_best))
+print(avg_error(time,ce,g_best)/100)
 
 # to predict the prediction power calculating the average error of the predicted values
 
@@ -109,7 +109,7 @@ test_ce=ope2.readlines()
 for i in range(len(test_time)): #converting the time values from strings to float
     test_ce[i]=float(test_ce[i])
 
-print(avg_error(test_time,test_ce,g_best))
+print(avg_error(test_time,test_ce,g_best)/100)
 
 # to predict the end point prediction
 def relative_error(t1,ce1,w):
@@ -118,4 +118,4 @@ def relative_error(t1,ce1,w):
     re=abs(re)*100
     return re
 
-print(relative_error(test_time[0],test_ce[0],g_best))
+print(relative_error(test_time[0],test_ce[0],g_best)/100)
